@@ -1,0 +1,38 @@
+ @font-face {
+    font-family: losevka;
+    src: url(src/losevka-ttf/iosevka-medium.ttf);
+ }
+ 
+ *{
+    font-family: losevka, 'Courier New', Courier, monospace;
+ }
+
+header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100vh;
+    background-color: #052e16;
+    color: #15803d;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #14532d;
+}
+
+.gameboard {
+    height: 600px;
+    width: 600px;
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-cell {
+    border: 1px solid black;
+}
