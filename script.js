@@ -15,3 +15,22 @@ const gameboard = (() =>{
     return {cell};
 })()
 
+const game = (() => {
+    gameboard.cell.forEach(element => {
+        element.addEventListener('click', function(){
+            let nextTurn = 'X';
+            function changeTurn(){
+                if (nextTurn === 'X'){
+                    nextTurn = 'O';
+                } else if (nextTurn === 'O'){
+                    nextTurn = 'X';
+                }
+            };
+
+            if (element.innerHTML === ''){
+                element.innerHTML = nextTurn;
+                changeTurn();
+            };
+        })
+    })
+})()
