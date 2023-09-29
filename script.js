@@ -16,9 +16,10 @@ const gameboard = (() =>{
 })()
 
 const game = (() => {
+    let nextTurn = 'X';
+    
     gameboard.cell.forEach(element => {
         element.addEventListener('click', function(){
-            let nextTurn = 'X';
             function changeTurn(){
                 if (nextTurn === 'X'){
                     nextTurn = 'O';
