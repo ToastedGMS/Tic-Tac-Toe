@@ -1,4 +1,4 @@
- @font-face {
+@font-face {
     font-family: losevka;
     src: url(src/losevka-ttf/iosevka-medium.ttf);
  }
@@ -10,8 +10,6 @@
 header {
     display: flex;
     justify-content: center;
-    position: fixed;
-    width: 100vh;
     background-color: #052e16;
     color: #15803d;
 }
