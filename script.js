@@ -73,12 +73,31 @@ const game = (() => {
                 return 'O wins'
             } else return 'It\'s a tie'
         };
-        
-        if (printWinner() === 'X wins' ||
-            printWinner() === 'O wins'){
-                alert(printWinner())}
+
+
+        if (printWinner() === `X wins`){
+                alert( `${player1.name} wins`)}
+        else if (printWinner() === `O wins`){
+            alert( `${player2.name} wins`)}
         else if (counter === 9){
-            alert(printWinner())}
+                alert(printWinner())}
+    
     })
 
 })();
+
+function playerFactory(name){return {name}};
+
+const btn = document.querySelector('[data-type="button"]');
+let player1
+let player2
+
+let name = document.getElementById('name');
+
+btn.addEventListener('click', (event) => {
+    event.preventDefault()
+    if (player1 === undefined){
+    player1 = playerFactory(name.value)}
+    else player2 = playerFactory(name.value)
+    name.value = '';
+})
