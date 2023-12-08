@@ -76,9 +76,9 @@ const game = (() => {
 
 
         if (printWinner() === `X wins`){
-                alert( `${player1.name} wins`)}
+                alert( `${players.player1.name} wins`)}
         else if (printWinner() === `O wins`){
-            alert( `${player2.name} wins`)}
+            alert( `${players.player2.name} wins`)}
         else if (counter === 9){
                 alert(printWinner())}
     
@@ -86,18 +86,12 @@ const game = (() => {
 
 })();
 
-function playerFactory(name){return {name}};
+const input2player = () => {
+    let player1 = playerFactory(prompt('Insert Player 1 name'));
+    let player2 = playerFactory(prompt('Insert Player 2 name'));
 
-const btn = document.querySelector('[data-type="button"]');
-let player1
-let player2
+    return {player1, player2}
+}
 
-let name = document.getElementById('name');
-
-btn.addEventListener('click', (event) => {
-    event.preventDefault()
-    if (player1 === undefined){
-    player1 = playerFactory(name.value)}
-    else player2 = playerFactory(name.value)
-    name.value = '';
-})
+const players = input2player();
+function playerFactory(name) {return {name}};
