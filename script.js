@@ -95,3 +95,8 @@ const input2player = () => {
 
 const players = input2player();
 function playerFactory(name) {return {name}};
+
+let btn = document.querySelector('[data-type="btn"]');
+btn.addEventListener('click', function(){
+    location.reload()
+})
